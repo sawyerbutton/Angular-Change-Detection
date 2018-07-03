@@ -97,7 +97,7 @@ class ApplicationRef {
 ### After?
 - 变更检测是如何进行的呢？
 - Key: 每一个组件都有属于自己的变更检测器(change detector)
-<img style="background: #0c4eb2; padding: 0 1em;" src="https://blog.thoughtram.io/images/cd-tree-2.svg">
+<img style="background: #0c4eb2; padding: 0 1em; width: 300px" src="https://blog.thoughtram.io/images/cd-tree-2.svg">
 ---
 
 
