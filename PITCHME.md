@@ -7,6 +7,6 @@
 - Angular开发从业者 from angular4
 - NodeJS开发入门者 from express to Nestjs
 - 我也是
-![Logo](assets/img/logo1.jpg =100*20)
+<img src="assets/img/logo1.jpg" width="50">
 ---
 
