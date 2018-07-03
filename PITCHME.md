@@ -16,7 +16,7 @@
 - 使其以某种方式对用户界面可见
 - 状态可以是: objects, Arrays, Primitives...
 ---
-<img src="assets/img/cd-2.svg" width="400px">
+<img src="assets/img/cd-1.svg" width="400px">
 ---
 
 
