@@ -3,12 +3,13 @@
 ### Angular从原理到应用 - @color[orange](变更检测)
 ---
 ### 我是谁?
-- Angular开发从业者 from angular4
-- NodeJS开发者 from express to Nestjs
+- Angular开发者 from Angular4 - Angular latest
+- NodeJS开发者 from Express to Nestjs
 - 我也是
 <img src="assets/img/logo1.jpg" width="88">
 和
 <img src="assets/img/logo2.jpg" width="88">
+- 如果你觉得舒服就叫我Tommy,不方便就@我
 ---
 ### 什么是变更检测
 - 获取程序的内部状态
