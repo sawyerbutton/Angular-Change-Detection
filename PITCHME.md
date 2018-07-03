@@ -260,6 +260,7 @@ export class AppComponent implements OnInit{
 - OnPush(In using)
 - Default(In using)
 - 自己去探索
+---
 ### 一个可能会踩到的坑
 - Pure pipe
 ```javascript
@@ -280,4 +281,4 @@ export class AppComponent implements OnInit{
 - 会频繁对传入的data进行检测
 - options: 使用immutable type data
 ---
-### 另一个一定会踩到的坑
+## 谢谢
