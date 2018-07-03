@@ -151,7 +151,8 @@ data === data2 // false reference are different
 ```
 ---
 ### 优化?
-- 变更检测可以跳过某些component子树(@Input()属性immutable)
+- 变更检测可以跳过某些component子树
+- @Input()属性immutable
 - 需要告诉angular 
 ---
 ### 比如
@@ -202,7 +203,7 @@ export class CartComponent implements OnInit {
 - 全部component设置为OnPush
 - <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-10.svg">
 ---
-### Angular不知道我们知道
+### Angular不知道  但我们知道
 - markForCheck from ChangeDetectorRef 
 
 ```javascript
@@ -230,7 +231,7 @@ export class CartComponent implements OnInit {
 - Observables 事件已经被触发了(变更检测前)
 - <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-12.svg">
 ---
-### Messi不用慌了 我们也不用
+### Messi不用慌了 我们也不用(变更检测后)
 - Observables 没凉
 - <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-13.svg">
 ---
