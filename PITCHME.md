@@ -16,7 +16,7 @@
 - 使其以某种方式对用户界面可见
 - 状态可以是: objects, Arrays, Primitives...
 ---
-<div width="400>
+<div width="400">
 <img src="assets/img/cd-1.png" width="400">
 </div>
 ---
