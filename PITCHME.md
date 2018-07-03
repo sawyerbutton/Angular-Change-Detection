@@ -1,4 +1,5 @@
 ---
+## ![logo](assets/img/logo0.png) 
 ## @color[#DC143C](Angular推进器)
 
 ### Angular从原理到应用 - @color[orange](变更检测)
