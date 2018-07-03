@@ -3,7 +3,7 @@
 ### Angular从原理到应用 - @color[orange](变更检测)
 ---
 ### 我是谁?
-- Angular开发者 from Angular4 - Angular latest
+- Angular开发者 from Angular4 to Angular latest
 - NodeJS开发者 from Express to Nestjs
 - 我也是
 <img src="assets/img/logo1.jpg" width="88">
@@ -61,7 +61,7 @@ export class ContactsComponent implements OnInit{
   ngOnInit() {
     this.http.get('/people')
       .map(res => res.json())
-      .subscribe(contacts => this.contacts = contacts);
+      .subscribe(people => this.people = people);
   }
 }
 ```
