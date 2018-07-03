@@ -103,6 +103,7 @@ class ApplicationRef {
 ---
 ### 数据流单向从上到下?
 - 变更检测 from top to bottom
+- BFS?DFS?
 - 优点多多
 ---
 ### 效率如何?
