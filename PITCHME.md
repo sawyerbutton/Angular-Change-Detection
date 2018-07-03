@@ -15,6 +15,8 @@
 - 获取程序的内部状态
 - 使其以某种方式对用户界面可见
 - 状态可以是: objects, Arrays, Primitives...
+- Value Types: string number boolean null undefined
+- Reference Types: array object function
 ---
 ### 当检测发生在运行时
 - 模型中的变化 -> 更新DOM的位置
@@ -250,3 +252,32 @@ export class AppComponent implements OnInit{
 }
 ```
 ---
+### 变更检测的种类
+- CheckOnce(Depreciated)
+- Checked(Depreciated)
+- CheckAlways(Depreciated)
+- Detached(Depreciated)
+- OnPush(In using)
+- Default(In using)
+- 自己去探索
+### 一个可能会踩到的坑
+- Pure pipe
+```javascript
+{{data | CustomizedPipe}}
+// data is a reference type, customized pipe may not be triggering.
+```
+- data的属性发生了变化 但是reference没变
+---
+### 解决方案
+- Impure pipe
+```javascript
+@Pipe({
+  name: 'CustomizedPipe',
+  pure: false
+})
+```
+- 类似于markForCheck
+- 会频繁对传入的data进行检测
+- options: 使用immutable type data
+---
+### 另一个一定会踩到的坑
