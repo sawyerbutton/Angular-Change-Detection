@@ -16,8 +16,7 @@
 - 使其以某种方式对用户界面可见
 - 状态可以是: objects, Arrays, Primitives...
 ---
-
-![Logo](https://blog.thoughtram.io/images/cd-4.svg)
+<img src="https://blog.thoughtram.io/images/cd-4.svg" width="200">
 ---
 
 
