@@ -136,6 +136,7 @@ export class ParentComponent {
 ---
 ### 不可变对象
 - reference change
+
 ```javascript
 var data = someAPIForImmutables.create({
               name: 'Button'
@@ -199,7 +200,8 @@ export class CartComponent implements OnInit {
 - <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-10.svg">
 ---
 ### Angular不知道我们知道
-- markForCheck from ChangeDetectorRef
+- markForCheck from ChangeDetectorRef 
+
 ```javascript
 @Component({
   template: '{{count}}',
