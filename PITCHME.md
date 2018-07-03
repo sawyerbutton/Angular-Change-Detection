@@ -1,7 +1,7 @@
 ---
-## @color[orange](Angular推进器)
+## @color[#DC143C](Angular推进器)
 
-### Angular从原理到应用 - @color[#DC143C](变更检测)
+### Angular从原理到应用 - @color[orange](变更检测)
 ---
 ### 我是谁?
 - Angular开发从业者 from angular4
