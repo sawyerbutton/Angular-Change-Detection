@@ -168,5 +168,83 @@ class VCardCmp {
 ---
 ### 结果?
 - immutable object + OnPush
-- <img style="background: #0c4eb2; padding: 0 1em; width: 300px" src="https://blog.thoughtram.io/images/cd-tree-8.svg">
+- <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-8.svg">
+---
+### Observables
+- 和immutable不同
+- Observables + OnPush?
+---
+### 简单的购物车
+- @Input() addItemStream reference
+```javascript
+@Component({
+  template: '{{count}}',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class CartComponent implements OnInit {
+
+  @Input() addItemStream: Observable<any>;
+  count = 0;
+
+  ngOnInit() {
+    this.addItemStream.subscribe(() => {
+      this.count++; // 变更出现在OnInit hook
+    })
+  }
+}
+```
+---
+### 怎么办?很慌
+- 全部component设置为OnPush
+- <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-10.svg">
+---
+### Angular不知道我们知道
+- markForCheck from ChangeDetectorRef
+```javascript
+@Component({
+  template: '{{count}}',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class CartComponent implements OnInit {
+
+  @Input() addItemStream: Observable<any>;
+  count = 0;
+  // 注入ChangeDetectorRef
+  constructor(private cdr: ChangeDetectorRef)
+  ngOnInit() {
+    this.addItemStream.subscribe(() => {
+      this.count++; // 变更出现在OnInit hook
+      this.cdr.markForCheck(); // 人为通知angular检测这个component
+    })
+  }
+}
+
+```
+---
+### 不慌了!
+- Observables 事件已经被触发了(变更检测前)
+- <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-12.svg">
+---
+### Messi不用慌了 我们也不用
+- Observables 没凉
+- <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-13.svg">
+---
+### 另一个应用场景
+- setTimeout&setInterval 
+```javascript
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class AppComponent implements OnInit{
+  data = [{name: 'Button'}];  
+  constructor(public cdr: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.data.push({name: 'Tommy'});
+      this.cdr.markForCheck(); // setTimeout + OnPush也需要配合 markForCheck使用
+    }, 2000);
+  }  
+}
+```
 ---

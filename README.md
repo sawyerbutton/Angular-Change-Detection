@@ -11,3 +11,5 @@
 - 让我们假设在组件树的某个地方触发了一个事件，可能已经点击了一个按钮。接下来发生什么？我们刚刚了解到zone执行给定的处理程序并在onTurnDown完成时通知Angular，最终导致Angular执行更改检测。
 - 因为单向数据流比循环更可预测。我们总是知道我们在视图中使用的数据来自何处，因为它只能来自其组件。
 - 另一个有趣的观察是一次通过后变化检测变得稳定。这意味着，如果我们的某个组件在更改检测期间第一次运行后导致任何其他副作用，Angular将抛出错误。
+- Observables会触发我们可以订阅的事件，以便对它们作出反应
+- Component 的 changeDetection 设定为 ChangeDetectionStrategy.OnPush，如果有使用 setTimeout 时，就必须配合 markForCheck() 的方法来更新 View 的显示
