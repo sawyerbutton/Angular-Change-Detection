@@ -73,7 +73,7 @@ export class ContactsComponent implements OnInit{
 
 #### Asynchronous
 ---
-### 是谁通知了Angular呢? 
+### 谁通知了Angular? 
 - [Zone.js](https://github.com/angular/zone.js#augmenting-a-zones-hook)
 - [NgZone](https://angular.io/api/core/NgZone) implements from Zone.js
 ```javascript
@@ -94,9 +94,47 @@ class ApplicationRef {
 }
 ```
 ---
-### After?
-- 变更检测是如何进行的呢？
+### 变更检测是如何进行的呢?
 - Key: 每一个组件都有属于自己的变更检测器(change detector)
 - <img style="background: #0c4eb2; padding: 0 1em; width: 300px" src="https://blog.thoughtram.io/images/cd-tree-2.svg"> <img style="background: #0c4eb2; padding: 0 1em; width: 300px" src="https://blog.thoughtram.io/images/cd-tree-7.svg">
+- 变更检测树 change detector tree: 有向图 数据流从上而下
 ---
+### 数据流单向从上到下?
+- 变更检测 from top to bottom
+- 优点多多
+---
+### 效率如何?
+- 感觉上很慢实际上很快 得益于 Angular 生成 VM 友好的代码
+- VM 不喜欢动态不确定的代码 VM的优化得益于 object的单态 而不是多态
+- Angular在运行时 创造变更检测器 - 单态 - 确定的model
+- Don't worry, Angular 帮我们处理好了这些复杂的部分
+---
+### 更聪明的变更检测
+- Angular默认的变更检测是自动的
+- 两个好帮手: Immutable(不可变) & Observables
+---
+### 理解可变和不可变(Mutability)
+- reference 没变 但是 property 改变 -> Angular负责地进行检测
+```javascript
+@Component({
+  template: '<child [data]="data"></child>'
+})
+export class ParentComponent {
+
+  constructor() {
+    this.data = {
+      name: 'Button',
+      email: 'github.com'
+    }
+  }
+
+  changeData() {
+    this.data.name = 'Tommy';
+  }
+}
+```
+---
+
+
+
 
