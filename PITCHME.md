@@ -19,7 +19,7 @@
 ### 当检测发生在运行时
 - 模型中的变化 -> 更新DOM的位置
 - 操作DOM开销昂贵
-<img src="assets/img/cd-1.png" width="400">
+<img src="http://teropa.info/images/onchange_watch.svg" width="400">
 ---
 
 
