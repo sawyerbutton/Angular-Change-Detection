@@ -134,7 +134,39 @@ export class ParentComponent {
 }
 ```
 ---
+### 不可变对象
+- reference change
+```javascript
+var data = someAPIForImmutables.create({
+              name: 'Button'
+            });
 
+var data2 = data.set('name', 'Tommy');
 
-
-
+data === data2 // false reference are different
+```
+---
+### 优化?
+- 变更检测可以跳过某些component子树(@Input()属性immutable)
+- 需要告诉angular 
+---
+### 比如
+- OnPush Strategy
+```javascript
+@Component({
+  template: `
+    <h2>{{data.name}}</h2>
+    <span>{{data.email}}</span>
+  `
+  // onPush 策略会在@Input()的内容属性不变时生效
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+class VCardCmp {
+  @Input() data;
+}
+```
+---
+### 结果?
+- immutable object + OnPush
+- <img style="background: #0c4eb2; padding: 0 1em; width: 300px" src="https://blog.thoughtram.io/images/cd-tree-8.svg">
+---
