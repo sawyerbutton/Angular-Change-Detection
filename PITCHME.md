@@ -19,7 +19,7 @@
 ### 当检测发生在运行时
 - 模型中的变化 -> 更新DOM的位置
 - 操作DOM开销昂贵
-- <img src="http://teropa.info/images/onchange_watch.svg" width="400">
+- <img style="background: #0c4eb2; padding: 0 1em; width: 300px;text-align: center" src="https://blog.thoughtram.io/images/cd-4.svg">
 ---
 ### 多种解决方案
 - HTTP 请求 + server 重新渲染
