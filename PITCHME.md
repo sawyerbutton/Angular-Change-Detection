@@ -3,7 +3,7 @@
 
 ### Angular从原理到应用 - @color[#DC143C](变更检测)
 ---
-### 我是谁？
+### 我是谁?
 - Angular开发从业者 from angular4
 - NodeJS开发者 from express to Nestjs
 - 我也是
@@ -23,7 +23,8 @@
 ---
 ### 多种解决方案
 - HTTP 请求 + server 重新渲染
-- 区分前后DOM的差异, 渲染不同的部分 -> React Virtual DOM
+- 区分前后DOM的差异, 渲染不同的部分
+- React Virtual DOM
 ---
 ### 回到Angular
 - 变化什么时候发生?
@@ -46,7 +47,7 @@ export class AppComponent {
 }
 ```
 ---
-###
+### 另一个例子
 ```javascript
 @Component()
 export class ContactsComponent implements OnInit{
@@ -72,8 +73,31 @@ export class ContactsComponent implements OnInit{
 
 #### Asynchronous
 ---
+### 是谁通知了Angular呢? 
+- [Zone.js](https://github.com/angular/zone.js#augmenting-a-zones-hook)
+- [NgZone](https://angular.io/api/core/NgZone) implements from Zone.js
+```javascript
+// 源码简化
+class ApplicationRef {
 
-
-
+  changeDetectorRefs:ChangeDetectorRef[] = [];
+  // applicationRef在构造器中监听onTurnDone事件
+  constructor(private zone: NgZone) {
+    this.zone.onTurnDone
+      .subscribe(() => this.zone.run(() => this.tick());
+  }
+// tick函数遍历所有的探测器的接口/对象 对其执行检测
+  tick() {
+    this.changeDetectorRefs
+      .forEach((ref) => ref.detectChanges());
+  }
+}
+```
+---
+### After?
+- 变更检测是如何进行的呢？
+- Key: 每一个组件都有属于自己的变更检测器(change detector)
+<img style="background: #0c4eb2; padding: 0 1em;" src="https://blog.thoughtram.io/images/cd-tree-2.svg">
+---
 
 
