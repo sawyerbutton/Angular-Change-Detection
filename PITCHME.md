@@ -106,7 +106,7 @@ class ApplicationRef {
 - 优点多多
 - unidirectional data flow 单向数据流
 ---
-### 澄清UDF和2-WAY Binding
+### 认清UDF和2-WAY Binding
 - Angular 分离更新应用程序模型并将视图中模型的状态反映为两个不同的阶段
 - 开发者负责更新应用model,变更检测负责把model的状态反映到视图
 - @Output()会在变更检测执行前运行
@@ -121,7 +121,7 @@ class ApplicationRef {
 - <img data-src="https://cdn-images-1.medium.com/max/1600/1*4i4InJWyGkLJfV0IcUsZQw.gif" src="https://cdn-images-1.medium.com/max/1600/1*4i4InJWyGkLJfV0IcUsZQw.gif">
 ---
 ### NgDoCheck钩子和变更检测
-- 更新子component的属性
+- 更新子组件的属性
 - 调用位于子组件中的NgDoCheck和NgOnChanges生命周期钩子
 - 更新当前组件的DOM
 - 向子组件执行变更检测
@@ -275,7 +275,7 @@ export class CartComponent implements OnInit {
 }
 ```
 ---
-### 怎么办?很慌
+### 怎么办?
 - 全部component设置为OnPush
 - <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-10.svg">
 ---
@@ -303,11 +303,11 @@ export class CartComponent implements OnInit {
 
 ```
 ---
-### 不慌了!
+### 不慌了
 - Observables 事件已经被触发了(变更检测前)
 - <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-12.svg">
 ---
-### Messi不用慌了 我们也不用(变更检测后)
+### 结果(变更检测后)
 - Observables 没凉
 - <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-13.svg">
 ---
@@ -331,10 +331,10 @@ export class AppComponent implements OnInit{
 ```
 ---
 ### 变更检测的种类
-- CheckOnce(Depreciated)
+- CheckOnce(move to changeDetectorRef)
 - Checked(Depreciated)
 - CheckAlways(Depreciated)
-- Detached(Depreciated)
+- Detached(move to changeDetectorRef)
 - OnPush(In using)
 - Default(In using)
 - 自己去探索
@@ -356,8 +356,8 @@ export class AppComponent implements OnInit{
 })
 ```
 - 类似于markForCheck
-- 会频繁对传入的data进行检测
-- options: 使用immutable type data
+- Angular创建了一个impure的多个实例，并在每个检测周期调用它定义的转换方法
+- options: 尽量使用immutable type data
 ---
 ### 结束之前
 
