@@ -119,7 +119,7 @@ class ApplicationRef {
 - 更新当前组件的DOM
 - 向子组件执行变更检测
 ---
-### 你是否认为ngDoCheck是在对当前组件进行check？
+### 对ngDoCheck的误会
 - stackoverflow上常见的疑问
 - @color[blue](为什么在OnPush策略下,即使组件没有属性更新,ngOnCheck钩子仍然被调用了?变更检测是怎么回事?)
 ---
