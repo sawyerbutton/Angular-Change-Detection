@@ -110,9 +110,20 @@ class ApplicationRef {
 - <img data-src="https://cdn-images-1.medium.com/max/1600/1*XFBDFfCa4Trq_C9M9AZiYQ.gif" src="https://cdn-images-1.medium.com/max/1600/1*XFBDFfCa4Trq_C9M9AZiYQ.gif">
 ---
 ### 实际上是DFS
-- 当Angular检查当前组件时,它调用子组件上的生命周期钩子,但渲染当前组件的DOM
+- 当Angular检查当前组件时,它调用子组件上的生命周期钩子,但渲染当前组件DOM
 - <img data-src="https://cdn-images-1.medium.com/max/1600/1*4i4InJWyGkLJfV0IcUsZQw.gif" src="https://cdn-images-1.medium.com/max/1600/1*4i4InJWyGkLJfV0IcUsZQw.gif">
-### 效率如何?
+---
+### NgDoCheck钩子和变更检测
+- 更新子component的属性
+- 调用位于子组件中的NgDoCheck和NgOnChanges生命周期钩子
+- 更新当前组件的DOM
+- 向子组件执行变更检测
+---
+### 你是否认为ngDoCheck是在对当前组件进行check？
+- stackoverflow上常见的疑问
+- @color[blue](I have used OnPush strategy for my component and no bindings have changed, but the ngDoCheck lifecycle hook is still triggered. Is the strategy not working?)
+---
+### 变更检测效率如何?
 - 感觉上很慢实际上很快 得益于 Angular 生成 VM 友好的代码
 - VM 不喜欢动态不确定的代码 VM的优化得益于 object的单态 而不是多态
 - Angular在运行时 创造变更检测器 - 单态 - 确定的model
