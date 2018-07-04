@@ -103,8 +103,11 @@ class ApplicationRef {
 ---
 ### 数据流单向从上到下?
 - 变更检测 from top to bottom
-- BFS?DFS?
 - 优点多多
+---
+### BFS OR DFS?
+- 看上去像是奇怪的BFS
+- <img data-src="https://cdn-images-1.medium.com/max/1600/1*XFBDFfCa4Trq_C9M9AZiYQ.gif" src="https://cdn-images-1.medium.com/max/1600/1*XFBDFfCa4Trq_C9M9AZiYQ.gif">
 ---
 ### 效率如何?
 - 感觉上很慢实际上很快 得益于 Angular 生成 VM 友好的代码
@@ -283,4 +286,6 @@ export class AppComponent implements OnInit{
 - 会频繁对传入的data进行检测
 - options: 使用immutable type data
 ---
+### 结束之前
+
 ## 谢谢
