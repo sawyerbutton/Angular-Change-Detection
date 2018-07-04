@@ -123,6 +123,58 @@ class ApplicationRef {
 - stackoverflow上常见的疑问
 - @color[blue](为什么在OnPush策略下,即使组件没有属性更新,ngOnCheck钩子仍然被调用了?变更检测是怎么回事?)
 ---
+### 和变更检测最相关的一些
+- 更新子组件数据/属性绑定
+- 更新DOM中的插值表达式
+- 更新查询列表
+- Angular同样会触发生命周期钩子,甚至在检查父组件时会触发子组件的钩子
+---
+### How 简化版?
+```
+ComponentA
+    ComponentB
+        ComponentC
+```
+```
+检测 A component:
+  - 更新B的输入绑定
+  - 执行B组件的NgDoCheck钩子
+  - 更新A组件的DOM插值表达式
+ 
+ 检测 B component:
+    - 更新C的输入绑定
+    - 执行C组件的NgDoCheck钩子
+    - 更新B组件的DOM插值表达式
+ 
+   检测 C component:
+      - 更新C组件的DOM插值表达式
+```
+---
+### ngDoCheck有什么用?
+- 配合markForCheck 和 OnPush 
+```javascript
+export class AppComponent {
+  @Input() data;
+
+  // store previous value of `id`
+  public id;
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngOnChanges() {
+    // 当data这个object改变时,更新id
+    this.id = this.data.id;
+  }
+
+  ngDoCheck() {
+    // 在ngDoCheck中检测data这个object的属性是否变化
+    if (this.id !== this.data.id) {
+      this.cdr.markForCheck();
+    }
+  }
+}
+```
+---
 ### 变更检测效率如何?
 - 感觉上很慢实际上很快 得益于 Angular 生成 VM 友好的代码
 - VM 不喜欢动态不确定的代码 VM的优化得益于 object的单态 而不是多态
