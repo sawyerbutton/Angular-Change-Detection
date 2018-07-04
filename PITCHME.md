@@ -109,6 +109,9 @@ class ApplicationRef {
 - 看上去像是奇怪的BFS
 - <img data-src="https://cdn-images-1.medium.com/max/1600/1*XFBDFfCa4Trq_C9M9AZiYQ.gif" src="https://cdn-images-1.medium.com/max/1600/1*XFBDFfCa4Trq_C9M9AZiYQ.gif">
 ---
+### 实际上是DFS
+- 当Angular检查当前组件时,它调用子组件上的生命周期钩子,但渲染当前组件的DOM
+- <img data-src="https://cdn-images-1.medium.com/max/1600/1*4i4InJWyGkLJfV0IcUsZQw.gif" src="https://cdn-images-1.medium.com/max/1600/1*4i4InJWyGkLJfV0IcUsZQw.gif">
 ### 效率如何?
 - 感觉上很慢实际上很快 得益于 Angular 生成 VM 友好的代码
 - VM 不喜欢动态不确定的代码 VM的优化得益于 object的单态 而不是多态
