@@ -121,7 +121,7 @@ class ApplicationRef {
 ---
 ### 你是否认为ngDoCheck是在对当前组件进行check？
 - stackoverflow上常见的疑问
-- @color[blue](I have used OnPush strategy for my component and no bindings have changed, but the ngDoCheck lifecycle hook is still triggered. Is the strategy not working?)
+- @color[blue](为什么在OnPush策略下,即使组件没有属性更新,ngOnCheck钩子仍然被调用了?变更检测是怎么回事?)
 ---
 ### 变更检测效率如何?
 - 感觉上很慢实际上很快 得益于 Angular 生成 VM 友好的代码
