@@ -9,7 +9,7 @@
 <img src="assets/img/logo1.jpg" width="88">
 和
 <img src="assets/img/logo2.jpg" width="88">
-- 如果你觉得舒服就叫我Tommy,不方便就@我
+- @我
 ---
 ### 什么是变更检测
 - 获取程序的内部状态
@@ -104,6 +104,13 @@ class ApplicationRef {
 ### 数据流单向从上到下?
 - 变更检测 from top to bottom
 - 优点多多
+- unidirectional data flow 单向数据流
+---
+### 澄清UDF和2-WAY Binding
+- Angular 分离更新应用程序模型并将视图中模型的状态反映为两个不同的阶段
+- 开发者负责更新应用model,变更检测负责把model的状态反映到视图
+- @Output()会在变更检测执行前运行
+- 单向数据流定义了更改检测间隙处理的绑定更新
 ---
 ### BFS OR DFS?
 - 看上去像是奇怪的BFS
@@ -127,7 +134,7 @@ class ApplicationRef {
 - 更新子组件数据/属性绑定
 - 更新DOM中的插值表达式
 - 更新查询列表
-- Angular同样会触发生命周期钩子,甚至在检查父组件时会触发子组件的钩子
+- 变更检测同样会触发生命周期钩子,甚至在检查父组件时会触发子组件的钩子
 ---
 ### How 简化版?
 ```
@@ -156,7 +163,7 @@ ComponentA
 export class AppComponent {
   @Input() data;
 
-  // store previous value of `id`
+  // 初始化并用来存储之前的id
   public id;
 
   constructor(private cdr: ChangeDetectorRef) {}
