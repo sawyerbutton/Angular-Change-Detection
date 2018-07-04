@@ -307,8 +307,8 @@ export class CartComponent implements OnInit {
 - Observables 事件已经被触发了(变更检测前)
 - <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-12.svg">
 ---
-### 结果(变更检测后)
-- Observables 没凉
+### 结果
+- Observables(变更检测后)
 - <img style="background: #0c4eb2; padding: 0 1em; width: 400px" src="https://blog.thoughtram.io/images/cd-tree-13.svg">
 ---
 ### 另一个应用场景
