@@ -66,11 +66,11 @@ export class ContactsComponent implements OnInit{
 }
 ```
 ---
-### 换句话说 什么会触发变更
+### 什么会触发变更?
 - Events - click, submit...事件
 - XHR - 从远端服务器获取数据
 - Timers - setTimeout(), setInterval() 浏览器web api
----
++++
 ### 触发变更?
 
 #### Asynchronous
