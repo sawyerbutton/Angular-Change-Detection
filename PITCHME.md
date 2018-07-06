@@ -114,11 +114,11 @@ class ApplicationRef {
 ---
 ### BFS OR DFS?
 - 看上去像是奇怪的BFS
-<img src="assets/img/CD1.gif" width="400">
+- <img src="assets/img/CD1.gif" width="500">
 ---
 ### 实际上是DFS
 - 当Angular检查当前组件时,它调用子组件上的生命周期钩子,但渲染当前组件DOM
-- <img data-src="https://cdn-images-1.medium.com/max/1600/1*4i4InJWyGkLJfV0IcUsZQw.gif" src="https://cdn-images-1.medium.com/max/1600/1*4i4InJWyGkLJfV0IcUsZQw.gif">
+- <img src="assets/img/CD2.gif" width="500">
 ---
 ### NgDoCheck钩子和变更检测
 - 更新子组件的属性
