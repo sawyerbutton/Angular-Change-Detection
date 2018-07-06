@@ -122,7 +122,7 @@ class ApplicationRef {
 ---
 ### NgDoCheck钩子和变更检测
 - 更新子组件的属性
-- 调用位于子组件中的NgDoCheck和NgOnChanges生命周期钩子
+- 调用位于子组件中的NgDoCheck生命周期钩子
 - 更新当前组件的DOM
 - 向子组件执行变更检测
 ---
@@ -136,7 +136,7 @@ class ApplicationRef {
 - 更新查询列表
 - 变更检测同样会触发生命周期钩子,甚至在检查父组件时会触发子组件的钩子
 ---
-### How 简化版?
+### How in onPush?
 ```
 ComponentA
     ComponentB
@@ -148,7 +148,7 @@ ComponentA
   - 执行B组件的NgDoCheck钩子
   - 更新A组件的DOM插值表达式
  
- 检测 B component:
+ (当Input()绑定发生了变化)检测 B component:
     - 更新C的输入绑定
     - 执行C组件的NgDoCheck钩子
     - 更新B组件的DOM插值表达式
@@ -242,7 +242,7 @@ data === data2 // false reference are different
   // onPush 策略会在@Input()的内容属性不变时生效
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-class VCardCmp {
+export class AppComponent {
   @Input() data;
 }
 ```
@@ -363,3 +363,4 @@ export class AppComponent implements OnInit{
 #### Q&A
 ---
 ## 谢谢
+### 联系我:linghui92liu@gmail.com
