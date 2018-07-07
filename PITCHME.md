@@ -106,7 +106,7 @@ class ApplicationRef {
 - 优点多多
 - unidirectional data flow 单向数据流
 ---
-### 认清UDF和2-WAY Binding
+### 认清单向数据流
 - Angular 分离更新应用程序模型并将视图中模型的状态反映为两个不同的阶段
 - 开发者负责更新应用model,变更检测负责把model的状态反映到视图
 - @Output()会在变更检测执行前运行
