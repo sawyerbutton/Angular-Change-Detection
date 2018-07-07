@@ -364,3 +364,4 @@ export class AppComponent implements OnInit{
 ---
 ## 谢谢
 ### 联系我:linghui92liu@gmail.com
+- <img src="assets/img/wechartMe.jpg" width="300">
