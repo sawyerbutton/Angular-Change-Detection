@@ -11,7 +11,7 @@
 <img src="./assets/img/logo2.jpg" width="88">
 - @我
 ---
-### 什么是变更
+### 什么是状态
 - 获取程序的内部状态
 - 使其以某种方式对用户界面可见
 - 状态可以是: objects, Arrays, Primitives...
@@ -132,7 +132,7 @@ class ApplicationRef {
 ---
 ### 和变更检测最相关的一些
 - 更新所有子组件/指令的绑定属性
-- 调用所有子组件/指令的三个生命周期钩子：ngOnInit，OnChanges，ngDoCheck
+- 三个生命周期钩子：ngOnInit，OnChanges，ngDoCheck
 - 更新当前组件的 DOM
 - 为子组件执行变更检测
 - 为所有子组件/指令调用当前组件的 ngAfterViewInit 生命周期钩子
