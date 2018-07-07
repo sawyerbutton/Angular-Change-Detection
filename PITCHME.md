@@ -6,9 +6,9 @@
 - Angular开发者 from Angular4 to Angular latest
 - NodeJS开发者 from Express to Nestjs
 - 我也是
-<img src="assets/img/logo1.jpg" width="88">
+<img src="./assets/img/logo1.jpg" width="88">
 和
-<img src="assets/img/logo2.jpg" width="88">
+<img src="./assets/img/logo2.jpg" width="88">
 - @我
 ---
 ### 什么是变更检测
@@ -114,11 +114,11 @@ class ApplicationRef {
 ---
 ### BFS OR DFS?
 - 看上去像是奇怪的BFS
-- <img src="assets/img/CD1.gif" width="500">
+- <img src="./assets/img/CD1.gif" width="500">
 ---
 ### 实际上是DFS
 - 当Angular检查当前组件时,它调用子组件上的生命周期钩子,但渲染当前组件DOM
-- <img src="assets/img/CD2.gif" width="500">
+- <img src="./assets/img/CD2.gif" width="500">
 ---
 ### NgDoCheck钩子和变更检测
 - 更新子组件的属性
@@ -364,4 +364,4 @@ export class AppComponent implements OnInit{
 ---
 ## 谢谢
 ### 联系我:linghui92liu@gmail.com
-- <img src="assets/img/wechartMe.jpg" width="300">
+- <img src="./assets/img/wechartMe.jpg" width="300">
