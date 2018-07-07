@@ -148,15 +148,15 @@ ComponentA
 检测 A component:
   - 更新B的输入绑定
   - 执行B组件的NgDoCheck钩子
-  - 更新A组件的DOM插值表达式
+  - 更新A组件的DOM
  
  (当Input()绑定发生了变化)检测 B component:
     - 更新C的输入绑定
     - 执行C组件的NgDoCheck钩子
-    - 更新B组件的DOM插值表达式
+    - 更新B组件的DOM
  
    检测 C component:
-      - 更新C组件的DOM插值表达式
+      - 更新C组件的DOM
 ```
 ---
 ### ngDoCheck有什么用?
