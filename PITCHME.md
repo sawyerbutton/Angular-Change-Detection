@@ -131,9 +131,11 @@ class ApplicationRef {
 - @color[blue](为什么在OnPush策略下,即使组件没有属性更新,ngOnCheck钩子仍然被调用了?变更检测是怎么回事?)
 ---
 ### 和变更检测最相关的一些
-- 更新子组件数据/属性绑定
-- 更新DOM中的插值表达式
-- 更新查询列表
+- 更新所有子组件/指令的绑定属性
+- 调用所有子组件/指令的三个生命周期钩子：ngOnInit，OnChanges，ngDoCheck
+- 更新当前组件的 DOM
+- 为子组件执行变更检测
+- 为所有子组件/指令调用当前组件的 ngAfterViewInit 生命周期钩子
 - 变更检测同样会触发生命周期钩子,甚至在检查父组件时会触发子组件的钩子
 ---
 ### How in onPush?
@@ -359,6 +361,21 @@ export class AppComponent implements OnInit{
 - Angular创建了一个impure的多个实例，并在每个检测周期调用它定义的转换方法
 - options: 尽量使用immutable type data
 ---
+## ExpressionChangedAfterItHasBeenCheckedError
+- 检查已经传给子组件用来更新其属性的值，是否与当前将要传入的值相同
+- 检查已经传给当前组件用来更新DOM的值，是否与当前将要传入的值相同
+- 递归检查每一个子组件
+---
+## 真实场景会更复杂
+- shared service
+- Observables
+- dynamic component initialize 动态组件初始化
+---
+## 解决方案
+- 异步更新
+- 强制进行变更检测,但是会触发子组件的变更检测,再次导致父组件属性改变
+- 为什么需要这个机制: 组件树稳定
+###
 ### 结束之前
 #### Q&A
 ---
