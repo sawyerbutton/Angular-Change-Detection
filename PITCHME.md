@@ -364,4 +364,4 @@ export class AppComponent implements OnInit{
 ---
 ## 谢谢
 ### 联系我:linghui92liu@gmail.com
-- <img src="./assets/img/me.jpg" width="188">
+![Logo](assets/img/me.jpg)
