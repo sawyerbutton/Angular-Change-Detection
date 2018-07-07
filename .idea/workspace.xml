@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da3d20be-c133-4ddb-b1ac-b52237b6734c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/PITCHME.md" beforeDir="false" afterPath="$PROJECT_DIR$/PITCHME.md" afterDir="false" />
-    </list>
+    <list default="true" id="da3d20be-c133-4ddb-b1ac-b52237b6734c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,8 +18,8 @@
         <entry file="file://$PROJECT_DIR$/PITCHME.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="299">
-                <caret line="143" column="14" lean-forward="true" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
+              <first_editor relative-caret-position="390">
+                <caret line="158" column="17" selection-start-line="158" selection-start-column="17" selection-end-line="158" selection-end-column="17" />
               </first_editor>
               <second_editor />
             </state>
@@ -137,16 +135,15 @@
       <updated>1530601090848</updated>
       <workItem from="1530601092195" duration="12137000" />
       <workItem from="1530669080933" duration="5714000" />
-      <workItem from="1530860132312" duration="17308000" />
+      <workItem from="1530860132312" duration="17556000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35159000" />
+    <option name="totallyTimeSpent" value="35407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.2482066" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -249,8 +246,8 @@
     <entry file="file://$PROJECT_DIR$/PITCHME.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="299">
-            <caret line="143" column="14" lean-forward="true" selection-start-line="143" selection-start-column="14" selection-end-line="143" selection-end-column="14" />
+          <first_editor relative-caret-position="390">
+            <caret line="158" column="17" selection-start-line="158" selection-start-column="17" selection-end-line="158" selection-end-column="17" />
           </first_editor>
           <second_editor />
         </state>
