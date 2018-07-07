@@ -11,7 +11,7 @@
 <img src="./assets/img/logo2.jpg" width="88">
 - @我
 ---
-### 什么是变更检测
+### 什么是变更
 - 获取程序的内部状态
 - 使其以某种方式对用户界面可见
 - 状态可以是: objects, Arrays, Primitives...
