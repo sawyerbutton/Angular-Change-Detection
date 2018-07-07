@@ -138,7 +138,7 @@ class ApplicationRef {
 - 为所有子组件/指令调用当前组件的 ngAfterViewInit 生命周期钩子
 - 变更检测同样会触发生命周期钩子,甚至在检查父组件时会触发子组件的钩子
 ---
-### How in onPush?
+### 检测循环内?
 ```
 ComponentA
     ComponentB
